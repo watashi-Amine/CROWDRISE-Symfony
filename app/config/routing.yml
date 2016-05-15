@@ -1,0 +1,22 @@
+admin:
+    resource: "@adminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+crowd:
+    resource: "@crowdBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    
+    
+CCDNForumForumBundle:
+    resource: "@CCDNForumForumBundle/Resources/config/routing.yml"
+fos_comment_api:
+    type: rest
+    resource: "@FOSCommentBundle/Resources/config/routing.yml"
+    prefix: /api
+    defaults: { _format: html }

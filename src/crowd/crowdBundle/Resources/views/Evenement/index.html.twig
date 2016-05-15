@@ -1,0 +1,104 @@
+{% extends "::enligne.html.twig" %}
+
+{% block css %}
+       <link rel="stylesheet" href="{{asset('event/css/calendrier/calendrier.css')}}">
+
+    {% endblock %}
+
+{% block body %}
+   
+  
+    
+    
+    
+<div class="container">
+     <div class="row">
+     <!-- Sidebar -->
+                <div class="col-sm-3 blog-sidebar">
+                  
+                     <h4>Chercher des Evenements par Categories</h4>
+                    {%  render(controller('crowdBundle:CtegorieEvenement:menu'))  %}
+                   
+                   
+                   
+                </div>
+                <!-- End Sidebar -->
+    <div class="col-sm-8">
+             <div class="row">
+
+      {% for entity in entities %}
+           <br>  <br> 
+		<div class="row">
+			<div class=" col-xs-12 col-sm-offset-2 col-sm-12 ">
+				<ul class="event-list">       
+					<li>
+						<time datetime="2014-07-20 2000">
+							<span class="day">{{ entity.dateDebut|date('d') }}</span>
+							<span class="month">{{ entity.dateDebut|date('m') }}</span>
+							<span class="year">{{ entity.dateDebut|date('Y') }}</span>
+							<span class="time">8:00 PM</span>
+						</time>
+						<img alt="My 24th Birthday!" src="https://farm5.staticflickr.com/4150/5045502202_1d867c8a41_q.jpg" />
+						<div class="info">
+							<h2 class="title">{{ entity.nomEvenement }}</h2>
+							<p class="desc">{{ entity.description}}</p>
+							<ul>
+								<li style="width:33%;">  <a href="{{ path('evenement_show', { 'id': entity.idEvenement }) }}">show</a> <span class="glyphicon glyphicon-ok"></span></li>
+                                                                <li style="width:34%;"><a href="{{ path('financerEvenement',{ 'idE' : entity.idEvenement})}}" > financer </a><span class="fa fa-question"></span></li>
+								<li style="width:33%;"> <a href="{{ path('evenement_edit', { 'id': entity.idEvenement }) }}">edit</a> <span class="fa fa-envelope"></span></li>
+							</ul>
+						</div>
+						<div class="social">
+							<ul>
+								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+							</ul>
+						</div>
+					</li>
+</ul>
+
+                        </div></div>
+            <br>  <br> 
+                 {% endfor %}
+                 </div>
+	</div>	</div>	</div>	
+    
+       <br>  <br>   <br>  <br>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+{% endblock %}
+
+{% block javascripts %}
+
+
+
+{% endblock %}

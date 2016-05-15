@@ -1,0 +1,30 @@
+categorieevenement:
+    path:     /
+    defaults: { _controller: "crowdBundle:CategorieEvenement:index" }
+
+categorieevenement_show:
+    path:     /{id}/show
+    defaults: { _controller: "crowdBundle:CategorieEvenement:show" }
+
+categorieevenement_new:
+    path:     /new
+    defaults: { _controller: "crowdBundle:CategorieEvenement:new" }
+
+categorieevenement_create:
+    path:     /create
+    defaults: { _controller: "crowdBundle:CategorieEvenement:create" }
+    methods:  POST
+
+categorieevenement_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "crowdBundle:CategorieEvenement:edit" }
+
+categorieevenement_update:
+    path:     /{id}/update
+    defaults: { _controller: "crowdBundle:CategorieEvenement:update" }
+    methods:  [POST, PUT]
+
+categorieevenement_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "crowdBundle:CategorieEvenement:delete" }
+    methods:  [POST, DELETE]

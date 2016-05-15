@@ -1,0 +1,175 @@
+{% extends "::base.html.twig" %}
+{% block css %}
+
+{% endblock%}
+
+
+
+{% block body %}
+    <!-- Text input
+    <h1>Projet list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Idprojet</th>
+                <th>Nomprojet</th>
+                <th>Resume</th>
+                <th>Image</th>
+                <th>Budjet</th>
+                <th>Fichier</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('projet_show', { 'id': entity.idProjet }) }}">{{ entity.idProjet }}</a></td>
+                <td>{{ entity.nomProjet }}</td>
+                <td>{{ entity.resume }}</td>
+                <td>{{ entity.image }}</td>
+                <td>{{ entity.budjet }}</td>
+                <td>{{ entity.fichier }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('projet_show', { 'id': entity.idProjet }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('projet_edit', { 'id': entity.idProjet }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('projet_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+      
+    
+    
+    
+    -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+
+
+    <!-- Page Title -->
+    <div class="section section-breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Visiter Nos Projets</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-sm-3 blog-sidebar">
+                    <h4>chercher des projet</h4>
+                                        {% render(controller('crowdBundle:Projet:recherche'))%}
+
+                   
+                    
+                  
+                    <h4>Categories</h4>
+                    <ul class="blog-categories">
+                        
+                        {%  render(controller('crowdBundle:Ctegorieprojet:menu'))  %}
+                        
+                        
+                        
+                    
+                </div>
+                <!-- End Sidebar -->
+                <div class="col-sm-8">
+                    
+                    <ul class="thumbnails list-unstyled">
+                        
+                        
+                        
+                        
+                    {% for entity in entities %}
+  
+                    
+                       
+                        
+                        
+        <li class="col-md-6">
+          <div class="thumbnail" style="padding: 0">
+            <div style="padding:4px">
+                <img  height="350" width="335" src="{{asset ( entity.imageFile )}}" >
+             
+            </div>
+            <div class="caption">
+                
+                
+             <a href="{{ path('projet_show', { 'id': entity.idProjet }) }}">  <h2>{{ entity.nomProjet }}</h2> </a>
+            <p>{{ entity.resume }}</p>
+              
+              
+              
+              <p><i class="icon icon-map-marker"></i> Place, Country</p>
+            </div>
+            <div class="modal-footer" style="text-align: left">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:  {% if entity.budjet == 0  %} 0 {% else %} {{ (entity.argent /  entity.budjet *100)|round(1, 'floor') }}{% endif %}%;">
+                    <span class="sr-only">60% Complete</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4"><b>{% if entity.budjet == 0  %} 0 {% else %} {{ (entity.argent /  entity.budjet *100)|round(1, 'floor') }}{% endif %}%</b><br/><small>aquis</small></div>
+                <div class="col-md-4"><b>{{ entity.budjet }} DTN</b><br/><small>But</small></div>
+                <div class="col-md-4"><b>{% if entity.budjet == entity.argent  %} financé {% else %} en cours ... {% endif %}</b><br/><small></small></div>
+              </div>
+            </div>
+          </div>
+        </li>
+       
+                    {% endfor %}
+
+          
+      </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    
+    
+{% endblock %}
+
+{% block javascripts %}
+
+
+
+{% endblock %}

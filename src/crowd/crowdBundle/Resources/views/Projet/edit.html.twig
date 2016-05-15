@@ -1,0 +1,209 @@
+{% extends '::enligne.html.twig' %}
+
+  {% block navbar %}
+                        {% include '::sidebar.html.twig' %}
+
+        {% endblock %}
+
+{% block body -%}
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <div class="section section-breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Editer Votre Projet</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+  		
+	
+    
+    
+    			
+                <!-- Basic Form -->
+                
+                <div  class="container-fluid">
+                    
+                 
+                       
+				 {{ form_start(edit_form, {'attr': {'id': 'sky-form1','class': 'sky-form'}}) }}	   
+                    <header>Votre Projet</header>
+
+                    <fieldset>
+                         <!-- nom projet -->
+                         <div class="row">
+                              <section class="col col-1">
+                               
+                            </section>
+                             <section class="col col-10">
+                                <label class="input">
+                                    
+                                    <i class="icon-append fa fa-briefcase"></i>
+                                     
+    {{ form_widget(edit_form.nomProjet, { 'attr': {'class': "span12",'placeholder': "Veuillez saisir le nom de votre projet"} }) }}
+     <b class="tooltip tooltip-bottom-right">Le nom du projet doit etre court et  significatif</b>
+     <div class="note note-success">Ce Champ est Obligatoir.</div>
+     
+                                </label>
+                            </section>
+							
+                           
+                        </div>
+<!-- fin nom projet -->
+<!-- resume projet -->
+						<div class="row">
+                                                    <section class="col col-1">
+                               
+                            </section>
+						<section class="col col-10">
+                            <label class="textarea">
+                                <i class="icon-append fa fa-comment"></i>
+                                    {{ form_widget(edit_form.resume, { 'attr': {'class': "span12",'placeholder': "Veuillez saisir une description de votre projet",'rows':'10'} }) }}
+   <b class="tooltip tooltip-bottom-right">Un ou deux paragraphe ou vous specifier les pricipaux objectifs de votre projet</b>
+        <div class="note note-success">Ce Champ est Obligatoir.</div>
+
+                            </label>
+                        </section>
+						 </div>
+						
+                        <!-- fin resume projet -->
+                         <!-- image projet -->
+                        
+                            <div class="row">
+                              <section class="col col-1">
+                                </section>
+                        
+                         <section class="col col-5">
+                        
+                        <section>
+                            <label for="file" class="input input-file">
+                                <div class="button">
+                                        {{ form_widget(edit_form.image) }}
+                                    Image
+                                </div>
+                                <input type="text" placeholder= " Image de votre projet " readonly>
+                            </label>
+                        </section>
+                            </section>
+  
+                     
+                        
+                          <!-- end image projet -->
+                         <!--  fichier projet -->
+                         <section class="col col-5">
+                        
+                        <section>
+                            <label for="file" class="input input-file">
+                                <div class="button">
+                                        {{ form_widget(edit_form.fichier) }}
+                                        
+                                    Fichier 
+                                </div>
+                                             
+
+                                <input type="text" placeholder=" business plan ou autre fichier explicatif " readonly>
+                            </label>
+                                        <div class="note note-success">Le fichier ne doit pas depasser les 10 Mo.</div>
+                        </section>
+                            </section>
+  
+                      </div>
+                         <!-- end fichier projet -->
+                        <!-- Budget projet -->
+                        <div class="row">
+                            <section class="col col-1">
+                                  </section>
+                            <section class="col col-10">
+                         <div class="input-group">
+                                  <b class="tooltip tooltip-bottom-right"> en Dinard Tunisien</b>
+                                    <span class="input-group-addon">DTN</span> {{ form_widget(edit_form.budjet, { 'attr': {'class': "form-control",'placeholder': "veuillez saisir le budget souhaité"} }) }}
+                                    
+                               
+                                    <span class="input-group-addon">.000</span>
+                                </div>
+                                         <div class="note note-success">Ce Champ est Obligatoir.</div>
+
+                                </section>
+                             </div>
+                         <!--end Budget projet -->
+                          <!--cat&type projet -->
+                          <div class="row">
+                            <section class="col col-1">
+                           </section>
+                          
+                         
+                                     
+                             <section class="col col-5">
+                            
+                                <label class="select">
+                                      {{form_widget(edit_form.idCategorieProjet, {'placeholder': "Categorie", 'attr': {'class': "select"}})}} 
+                                      <div class="note note-success">Categorie n'est pas une option valide.</div>
+                                    <i></i>
+                                </label>
+                            </section>
+                                    <section class="col col-5">
+                            
+                                <label class="select">
+                                      {{form_widget(edit_form.idType, {'placeholder': "Type", 'attr': {'class': "select"}})}} 
+                                       <div class="note note-success">Type n'est pas une option valide.</div>
+                                       
+                                    
+                                    <i></i>
+                                </label>
+                            </section>     
+                                   
+                                      <!--end cat&type projet -->    
+                             </div>
+                                   
+                                          <!--submit  projet -->   
+                                          <footer>
+                                           <section class="col col-1">
+                                                </section> 
+                                            <section class="col col-4">
+                 <button type="submit" class="btn-u"><a href="{{path('projet')}}">Tout les projets</a></button>
+
+                                                </section> 
+                                           
+                                            <section class="col col-4">
+                                {{form_widget(edit_form.submit, { 'label':'Modifier','attr': {'class': "btn-u"}})}}  	              
+         {{ form_rest(edit_form) }}			   
+			{{ form_end(edit_form) }}
+        
+                         
+                                            
+                                            </section>
+                         <section class="col col-3">
+                                   {{ form(delete_form) }}                                 
+
+         
+  </section>  
+             
+                        <div class="progress"></div>
+                    </footer>
+                         
+                           <!--end submit  projet -->   
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+             
+                <!-- End Order Form -->
+					   
+			
+                        		   
+	
+{% endblock %}

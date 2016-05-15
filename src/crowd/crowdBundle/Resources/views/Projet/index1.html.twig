@@ -1,0 +1,25 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script> 
+
+
+    <h1>list</h1>
+
+    <table border="1">
+        
+            <tr>
+                <th>Id</th>
+                <th>nom</th>
+            </tr>
+        
+        {% for projet in projets %}
+            <tr>
+                <td>{{ projet.id }}</a></td>
+                <td>{{ projet.nomProjet }}</td>
+            </tr>
+  
+        {% endfor %}
+        
+    </table>
+
+
+ {% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': 'foo'} %}

@@ -1,0 +1,4 @@
+services:
+    redirect.after.login:
+        class: crowd\crowdBundle\Redirection\AfterLoginRedirection
+        arguments: [@router]

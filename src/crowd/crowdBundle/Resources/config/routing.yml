@@ -1,0 +1,78 @@
+crowd_investissementpe:
+    resource: "@crowdBundle/Resources/config/routing/investissementpe.yml"
+    prefix:   /investissementpe
+
+crowd_categorieevenement:
+    resource: "@crowdBundle/Resources/config/routing/categorieevenement.yml"
+    prefix:   /categorieevenement
+
+crowd_evenement:
+    resource: "@crowdBundle/Resources/config/routing/evenement.yml"
+    prefix:   /evenement
+
+crowd_reclamation:
+    resource: "@crowdBundle/Resources/config/routing/reclamation.yml"
+    prefix:   /reclamation
+
+crowd_solution:
+    resource: "@crowdBundle/Resources/config/routing/solution.yml"
+    prefix:   /solution
+
+crowd_probleme:
+    resource: "@crowdBundle/Resources/config/routing/probleme.yml"
+    prefix:   /probleme
+
+crowd_projet:
+    resource: "@crowdBundle/Resources/config/routing/projet.yml"
+    prefix:   /projet
+
+crowd_user:
+    resource: "@crowdBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
+crowd_homepage:
+    path:     /hello/
+    defaults: { _controller: crowdBundle:usernav:index }
+projet22:
+    path:     /projet22
+    defaults: { _controller: crowdBundle:usernav:projetAceuil}
+modifierProfile:
+    path:     /modifierProfile
+    defaults: { _controller: crowdBundle:usernav:modifierProfile}
+profile_info:
+    path:      /profile/info
+    defaults: {_controller:  crowdBundle:usernav:profile_info}
+ADMIN:
+    
+    path:      /profile/info
+    defaults: {_controller:  crowdBundle:usernav:profile_info}
+admin_acceuil:
+    path:      /admin/
+    defaults: {_controller:  crowdBundle:admin:admin}    
+afficher_All_User:
+    path:      /admin/afficher_All_User/
+    defaults: {_controller:  crowdBundle:admin:afficher_All_User}
+afficher_all_projet:   
+    path:      /admin/afficher_all_projet/
+    defaults: {_controller:  crowdBundle:admin:afficher_all_projet}
+block_user:
+    path:      /admin/block_user/{id}
+    defaults: {_controller:  crowdBundle:admin:block_user}    
+statistique_Projet:
+    path:      /admin/statistique_Projet/
+    defaults: {_controller:  crowdBundle:admin:statistique_Projet}   
+
+    
+edit_profile:
+    path:      /admin/edit_profile/{id}
+    defaults: {_controller:  crowdBundle:admin:edit_profile}  
+rechercheUserTraitement:
+    path:      /admin/recherche/
+    defaults: {_controller:  crowdBundle:admin:rechercheUserTraitement}  
+acceuil:
+    path:     /acceuil
+    defaults: { _controller: crowdBundle:usernav:projetAceuil}
+afficherProjet:
+    path:     /afficherProjet
+    defaults: { _controller: crowdBundle:usernav:afficherProjet}
+

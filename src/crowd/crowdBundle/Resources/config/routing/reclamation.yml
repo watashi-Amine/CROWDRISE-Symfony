@@ -1,0 +1,30 @@
+reclamation:
+    path:     /
+    defaults: { _controller: "crowdBundle:Reclamation:index" }
+
+reclamation_show:
+    path:     /{id}/show
+    defaults: { _controller: "crowdBundle:Reclamation:show" }
+
+reclamation_new:
+    path:     /new
+    defaults: { _controller: "crowdBundle:Reclamation:new" }
+
+reclamation_create:
+    path:     /create
+    defaults: { _controller: "crowdBundle:Reclamation:create" }
+    methods:  POST
+
+reclamation_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "crowdBundle:Reclamation:edit" }
+
+reclamation_update:
+    path:     /{id}/update
+    defaults: { _controller: "crowdBundle:Reclamation:update" }
+    methods:  [POST, PUT]
+
+reclamation_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "crowdBundle:Reclamation:delete" }
+    methods:  [POST, DELETE]

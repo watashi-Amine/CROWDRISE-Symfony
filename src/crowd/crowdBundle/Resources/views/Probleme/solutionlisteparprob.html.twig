@@ -1,0 +1,41 @@
+<div class="col-md-2"></div>
+                    <div class="panel-body col-md-8">
+                        <table  class="table table-striped">
+
+<thead>
+                                            <tr>
+
+                                                <th>Freelancer</th>
+                                                <th>Duree </th>
+                                                <th>Prix</th>
+                                                <th>Temps restant</th>
+                                                
+                                                
+                                            </tr>
+                                        </thead>
+           {% for sol in sols %}
+               
+               <div class="row"  >
+                                <div class="col-lg-6">
+                                    
+                                        
+                                        <tbody>
+
+                                        <td>{{ sol.id}} </td>
+                                        <td>{{ sol.duree }}</td>
+                                        <td>{{ sol.budjetS }}</td>
+                                        <td>{{ sol.dateDepot | date('Y-m-d') }}</td>
+                                       
+                                        
+                                        
+                                      
+                                        </tr>
+
+                                        </tbody>
+                                        
+               {% endfor %}
+                <hr>
+
+                                </table>
+           </div>
+          

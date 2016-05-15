@@ -1,0 +1,45 @@
+probleme:
+    path:     /
+    defaults: { _controller: "crowdBundle:Probleme:index" }
+
+probleme_show:
+    path:     /{id}/show
+    defaults: { _controller: "crowdBundle:Probleme:show" }
+
+probleme_new2:
+    path:     /new2
+    defaults: { _controller: "crowdBundle:Probleme:new2" } 
+probleme_new:
+    path:     /new
+    defaults: { _controller: "crowdBundle:Probleme:new" }
+probleme_ajout:
+    path:     /ajout
+    defaults: { _controller: "crowdBundle:Probleme:ajout" }
+
+probleme_create:
+    path:     /create
+    defaults: { _controller: "crowdBundle:Probleme:create" }
+    requirements: { _method: post }
+
+probleme_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "crowdBundle:Probleme:edit" }
+
+probleme_update:
+    path:     /{id}/update
+    defaults: { _controller: "crowdBundle:Probleme:update" }
+    requirements: { _method: post|put }
+
+probleme_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "crowdBundle:Probleme:delete" }
+    requirements: { _method: post|delete }
+probleme_recherche_comp:
+    path:     /recherche_comp
+    defaults: { _controller: "crowdBundle:Probleme:rechercheComp" }
+comFr:
+    path:     /competence/{com}
+    defaults: { _controller: "crowdBundle:Probleme:com" }
+typePr:
+    path:     /probleme/{type}
+    defaults: { _controller: "crowdBundle:Probleme:type" }

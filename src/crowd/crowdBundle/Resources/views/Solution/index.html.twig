@@ -1,0 +1,55 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Solution list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Idprobleme</th>
+                <th>Description</th>
+                <th>Fichier</th>
+                <th>Duree</th>
+                <th>Budjets</th>
+                <th>Datepub</th>
+                <th>Datedepot</th>
+                <th>Idsolution</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('solution_show', { 'id': entity.idsolution }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.idprobleme }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.fichier }}</td>
+                <td>{{ entity.duree }}</td>
+                <td>{{ entity.budjetS }}</td>
+                <td>{% if entity.datePub %}{{ entity.datePub|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.dateDepot %}{{ entity.dateDepot|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.idsolution }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('solution_show', { 'id': entity.idsolution }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('solution_edit', { 'id': entity.idsolution }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('solution_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

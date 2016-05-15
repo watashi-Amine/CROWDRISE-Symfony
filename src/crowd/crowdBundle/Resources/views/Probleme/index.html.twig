@@ -1,0 +1,55 @@
+{% extends '::enlignefreelancer.html.twig' %}
+
+{% block body -%}
+    <h1>Probleme list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Nomprobleme</th>
+                <th>Typeprobleme</th>
+                <th>Competence</th>
+                <th>Description</th>
+                <th>Budjetp</th>
+                <th>Fichier</th>
+                <th>Duree</th>
+                <th>Datepublication</th>
+                <th>Idprobleme</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('probleme_show', { 'id': entity.idprobleme }) }}">{{ entity.nomprobleme }}</a></td>
+                <td>{{ entity.typeprobleme }}</td>
+                <td>{{ entity.competence }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.budjetP }}</td>
+                <td>{{ entity.fichier }}</td>
+                <td>{{ entity.duree }}</td>
+                <td>{% if entity.datepublication %}{{ entity.datepublication|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.idprobleme }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('probleme_show', { 'id': entity.idprobleme }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('probleme_edit', { 'id': entity.idprobleme }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('probleme_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

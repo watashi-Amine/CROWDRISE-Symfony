@@ -1,0 +1,37 @@
+solution:
+    path:     /
+    defaults: { _controller: "crowdBundle:Solution:index" }
+
+solution_show:
+    path:     /{id}/show
+    defaults: { _controller: "crowdBundle:Solution:show" }
+
+solution_new:
+    path:     /new
+    defaults: { _controller: "crowdBundle:Solution:new" }
+
+solution_create:
+    path:     /create
+    defaults: { _controller: "crowdBundle:Solution:create" }
+    requirements: { _method: post }
+
+solution_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "crowdBundle:Solution:edit" }
+
+solution_update:
+    path:     /{id}/update
+    defaults: { _controller: "crowdBundle:Solution:update" }
+    requirements: { _method: post|put }
+
+solution_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "crowdBundle:Solution:delete" }
+    requirements: { _method: post|delete }
+solpro:
+    path:     /solu/{sol}
+    defaults: { _controller: "crowdBundle:Solution:solByid" }  
+   
+solution_ajouter:
+    path:     /{id}/ajouter
+    defaults: { _controller: "crowdBundle:Solution:ajout" }

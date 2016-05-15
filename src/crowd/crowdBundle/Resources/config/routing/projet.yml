@@ -1,0 +1,45 @@
+utilisateur_homepage:
+    path:     /hello
+    defaults: { _controller: crowdBundle:Default:index }
+projet:
+    path:     /projets
+    defaults: { _controller: "crowdBundle:Projet:index" }
+
+projet_show:
+    path:     /{id}/show
+    defaults: { _controller: "crowdBundle:Projet:show" }
+
+projet_new:
+    path:     /new
+    defaults: { _controller: "crowdBundle:Projet:new" }
+
+projet_create:
+    path:     /create
+    defaults: { _controller: "crowdBundle:Projet:create" }
+    requirements: { _method: post }
+
+projet_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "crowdBundle:Projet:edit" }
+
+projet_update:
+    path:     /{id}/update
+    defaults: { _controller: "crowdBundle:Projet:update" }
+    
+
+projet_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "crowdBundle:Projet:delete" }
+    requirements: { _method: post|DELETE }
+
+catproj:
+    path:     /catproj/{cat}
+    defaults: { _controller: "crowdBundle:Projet:cat" }
+    
+projet_recherche:
+    path:     /recherche
+    defaults: { _controller: "crowdBundle:Projet:rechercheTrai" }
+    
+indexowner:
+    path:     /indexowner
+    defaults: { _controller: "crowdBundle:Projet:indexowner" }

@@ -1,0 +1,55 @@
+{% extends '::enligne.html.twig' %}
+  {% block navbar %}
+                        {% include '::sidebar.html.twig' %}
+
+        {% endblock %}
+{%  block body %}
+    
+    
+<div class="col-md-9">
+              
+        {% for entity in entities %}
+
+                <!--Blog Post-->
+                <div class="blog margin-bottom-40">
+                    <h2><a href="blog_item_option1.html">{{ entity.nomProjet }} </a></h2>
+                    <div class="blog-post-tags">
+                        <ul class="list-unstyled list-inline blog-info">
+                            <li><i class="fa fa-money"></i> {{ entity.budjet }} TND</li>
+                          
+                        </ul>
+                        <ul class="list-unstyled list-inline blog-tags">
+                            <li>
+                                <i class="fa fa-tags"></i>
+                                <a href="#">Technology</a>
+                                <a href="#">Education</a>
+                                <a href="#">Internet</a>
+                                <a href="#">Media</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="blog-img">
+                        <img class="img-responsive" width="400" height="600 " src="{{asset(entity.imageFile,'avatars')}}" alt="">
+                    </div>
+                  
+                    <p>{{ entity.resume }}</p>
+                </div>
+                <div>
+                    <a href="{{ entity.fichierFile }}" class="fa-file-pdf-o" download> consulter info </a>
+                </div>
+                <!--End Blog Post-->
+
+                <!--Pagination-->
+                   <ul>
+                    <li>
+                        <a href="{{ path('projet_show', { 'id': entity.idProjet }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('projet_edit', { 'id': entity.idProjet }) }}">edit</a>
+                    </li>
+                </ul>
+                <!--End Pagination-->
+            </div>
+
+                    {% endfor%}
+    {% endblock %}

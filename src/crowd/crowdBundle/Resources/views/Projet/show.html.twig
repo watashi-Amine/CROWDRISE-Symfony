@@ -1,0 +1,63 @@
+{% extends ":navigation:enligne.html.twig" %}
+
+{% block body %}
+<div class="col-md-3">
+ </div>
+<div class="col-md-9">
+              
+
+                <!--Blog Post-->
+                <div class="blog margin-bottom-40">
+                    <h2><a href="blog_item_option1.html">{{ entity.nomProjet }} </a></h2>
+                    <div class="blog-post-tags">
+                        <ul class="list-unstyled list-inline blog-info">
+                            <li><i class="fa fa-money"></i> {{ entity.budjet }} TND</li>
+                          
+                        </ul>
+                        <ul class="list-unstyled list-inline blog-tags">
+                            <li>
+                                <i class="fa fa-tags"></i>
+                                <a href="#">Technology</a>
+                                <a href="#">Education</a>
+                                <a href="#">Internet</a>
+                                <a href="#">Media</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="blog-img">
+                        <img width="700" height="400 " src="{{asset(entity.imageFile,'avatars')}}" alt="">
+                    </div>
+                  
+                    <p>{{ entity.resume }}</p>
+              
+                
+                </div>
+                <div>
+                    <a href="{{ entity.fichierFile }}" class="fa-file-pdf-o" download> consulter info </a>
+                </div>
+                <div>
+                    <a href="{{ path('financerProjet',{ 'idp' : entity.idprojet})}}" class="btn-bitcoin" > financer projet </a>
+                </div>
+                
+                                                                          {% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': entity.nomProjet} %}
+
+                <!--End Blog Post-->
+
+                <!--Pagination-->
+                <div class="text-center">
+                    <ul class="pagination">
+                        <li><a href="#">«</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li class="active"><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">8</a></li>
+                        <li><a href="#">»</a></li>
+                    </ul>
+                </div>
+                <!--End Pagination-->
+            </div>
+{% endblock %}

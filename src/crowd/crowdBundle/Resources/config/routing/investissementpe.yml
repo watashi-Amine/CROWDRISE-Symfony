@@ -1,0 +1,36 @@
+investissementpe:
+    path:     /
+    defaults: { _controller: "crowdBundle:InvestissementPE:index" }
+
+investissementpe_show:
+    path:     /{id}/show
+    defaults: { _controller: "crowdBundle:InvestissementPE:show" }
+
+investissementpe_new:
+    path:     /new
+    defaults: { _controller: "crowdBundle:InvestissementPE:new" }
+
+investissementpe_create:
+    path:     /create
+    defaults: { _controller: "crowdBundle:InvestissementPE:create" }
+    methods:  POST
+
+investissementpe_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "crowdBundle:InvestissementPE:edit" }
+
+investissementpe_update:
+    path:     /{id}/update
+    defaults: { _controller: "crowdBundle:InvestissementPE:update" }
+    methods:  [POST, PUT]
+
+investissementpe_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "crowdBundle:InvestissementPE:delete" }
+    methods:  [POST, DELETE]
+financerProjet:
+    path:     /financerProjet/{idp}
+    defaults: { _controller: "crowdBundle:InvestissementPE:financerProjet" }
+financerEvenement:
+    path:     /financerEvenement/{idE}
+    defaults: { _controller: "crowdBundle:InvestissementPE:financerEvenement" }

@@ -1,0 +1,136 @@
+
+
+{% extends "::enligne.html.twig" %}
+{% block css %}
+
+
+{% endblock%}
+
+
+
+{% block body %}
+     <!-- End Blog Post
+     End Product Image & Available 
+    <h1>Evenement</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>dateDebut</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>dateFin</th>
+                <td>{{ entity.dateFin|date('Y-m-d H:i:s') }}</td>
+            </tr>
+           
+           
+            <tr>
+                <th>description</th>
+                <td></td>
+            </tr>
+            <tr>
+            </tr>
+            
+            <tr>
+                <th>id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            
+            <tr>
+                <th>idInvestissement</th>
+                <td>{{ entity.idInvestissement }}</td>
+            </tr>
+            
+            
+             <tr>
+                <th>nomEvenement</th>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('evenement') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+       
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+    
+    Colors -->
+   
+    
+    
+    
+      <div class="section">
+        <div class="container">
+            <div class="row">
+                <!-- Blog Post -->
+                <div class="col-sm-offset-2 col-sm-8">
+                  
+                    <div class="blog-post blog-single-post">
+                        <div class="single-post-title">
+                            <h3>{{ entity.nomEvenement }}</h3>
+                        </div>
+                        <div class="single-post-info">
+                            <i class="glyphicon glyphicon-time"></i>{{ entity.dateDebut|date('Y-m-d H:i:s') }} ------  {{ entity.dateFin|date('Y-m-d H:i:s') }}s         <a href="#" title="Show Comments"><i class="glyphicon glyphicon-comment"></i>11</a>
+                        </div>
+                        
+                         <td>  <div class="single-post-image">
+                                    <img src="{{asset('assets/img/capt.jpg')}}" alt="Post Title"></div>
+                                    
+                           </td>
+                        <tr><td><p>
+                                {{ entity.description }}
+                               </p></td>
+                           
+                        </tr>
+                        <tr><td><div class="single-post-content">
+                            <h3>SHOW</h3>
+                            <html lang="en">
+
+                      <head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+                            <div class="container">
+                            <button data-placement="top" rel="tooltip" title="Support Us" class=" btn btn-info" type="submit"> <a href="{{ path('evenement') }} ">  Back to the list </a>   </button> 
+                                      <button data-placement="top" rel="tooltip" title="Support Us" class=" btn btn-info" type="submit"><a href="{{ path('evenement_edit', { 'id': entity.idEvenement }) }}">      Edit     </a></button>
+                       </div>
+</body>
+                                </div></td>
+                             
+                        </tr>
+                        
+                        
+                        <center> <td> {{ google_map(map) }} </td></center>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Blog Post -->
+
+    
+    
+      
+    
+{% endblock %}
+
+{% block javascripts %}
+
+
+
+{% endblock %}
